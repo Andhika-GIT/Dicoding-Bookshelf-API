@@ -2,6 +2,8 @@
 
 # Bookshelf API
 
+by Andhika Prasetya Nugraha
+
 <h2>How to run</h2>
 <h3 >
 

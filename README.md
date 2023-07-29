@@ -17,7 +17,7 @@ Step 2
 
 </h3>
 
-Second, run `npm install` to install the packages
+run `npm install` to install the packages
 
 <h3 >
 
@@ -25,7 +25,7 @@ Step 3
 
 </h3>
 
-Third, run the following command to run local server :
+run the following command to run local server :
 
 ```sh
 npm run start

@@ -15,7 +15,7 @@ const addBookHandler = (request, h) => {
 
   if (!name) {
     const response = h.response({
-      status: "fail",
+      status: "failed",
       message: "Gagal menambahkan buku. Mohon isi nama buku",
     });
 
@@ -25,7 +25,7 @@ const addBookHandler = (request, h) => {
 
   if (readPage > pageCount) {
     const response = h.response({
-      status: "fail",
+      status: "failed",
       message:
         "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount",
     });
@@ -59,7 +59,7 @@ const addBookHandler = (request, h) => {
 
   if (isSuccess) {
     const response = h.response({
-      status: "success",
+      status: "succeeded",
       message: "Buku berhasil ditambahkan",
       data: {
         bookId: id,
@@ -71,7 +71,7 @@ const addBookHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "fail",
+    status: "failed",
     message: "Buku gagal ditambahkan",
   });
 
@@ -103,7 +103,7 @@ const getAllBooksHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "success",
+    status: "succeeded",
     data: {
       books: filteredBooks.map((book) => ({
         id: book.id,
@@ -128,7 +128,7 @@ const getBookByIdHandler = (request, h) => {
 
   if (book !== undefined) {
     return {
-      status: "success",
+      status: "succeeded",
       data: {
         book,
       },
@@ -136,7 +136,7 @@ const getBookByIdHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "fail",
+    status: "failed",
     message: "Buku tidak ditemukan",
   });
 
@@ -163,7 +163,7 @@ const editBookByIdHandler = (request, h) => {
 
   if (!name) {
     const response = h.response({
-      status: "fail",
+      status: "failed",
       message: "Gagal memperbarui buku. Mohon isi nama buku",
     });
     response.code(400);
@@ -173,7 +173,7 @@ const editBookByIdHandler = (request, h) => {
 
   if (readPage > pageCount) {
     const response = h.response({
-      status: "fail",
+      status: "failed",
       message:
         "Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount",
     });
@@ -200,7 +200,7 @@ const editBookByIdHandler = (request, h) => {
     };
 
     const response = h.response({
-      status: "success",
+      status: "succeeded",
       message: "Buku berhasil diperbarui",
     });
 
@@ -209,7 +209,7 @@ const editBookByIdHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "fail",
+    status: "failed",
     message: "Gagal memperbarui buku. Id tidak ditemukan",
   });
 
@@ -225,7 +225,7 @@ const deleteBookByIdHandler = (request, h) => {
   if (index !== -1) {
     books.splice(index, 1);
     const response = h.response({
-      status: "success",
+      status: "succeeded",
       message: "Buku berhasil dihapus",
     });
 
@@ -234,7 +234,7 @@ const deleteBookByIdHandler = (request, h) => {
   }
 
   const response = h.response({
-    status: "fail",
+    status: "failed",
     message: "Buku gagal dihapus. Id tidak ditemukan",
   });
 

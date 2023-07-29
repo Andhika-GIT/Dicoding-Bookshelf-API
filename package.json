@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Andhika Prasetya Nugraha",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.20"
